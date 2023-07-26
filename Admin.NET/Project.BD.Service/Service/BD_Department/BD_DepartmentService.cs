@@ -54,6 +54,7 @@ public class BD_DepartmentService : IDynamicApiController, ITransient
     public async Task Add(AddBD_DepartmentInput input)
     {
         var entity = input.Adapt<BD_Department>();
+        entity.DepId = Guid.NewGuid().ToString();
         await _rep.InsertAsync(entity);
     }
 
