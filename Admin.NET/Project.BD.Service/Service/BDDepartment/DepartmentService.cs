@@ -4,20 +4,19 @@
 //
 // 电话/微信：18020030720 QQ群1：87333204 QQ群2：252381476
 
-using Admin.NET.Core.Service.BaseDataService.BDepartment.Dto;
-using Admin.NET.Core.Service.BaseDataService.BDepartment.Model;
-using Microsoft.AspNetCore.Identity;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Admin.NET.Core;
+using Furion.DatabaseAccessor;
+using Furion.DependencyInjection;
+using Furion.DynamicApiController;
+using Furion.FriendlyException;
+using Mapster;
+using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel;
 
-namespace Admin.NET.Core.Service.BaseDataService.BDepartment;
+namespace Project.BD.Service.Service.BDDepartment;
 public class DepartmentService : IDynamicApiController, ITransient
 {
     private readonly SqlSugarRepository<BD_Department> _bd_Depatment_Rep;
-
     public DepartmentService(SqlSugarRepository<BD_Department> bd_Depatment_Rep)
     {
         _bd_Depatment_Rep = bd_Depatment_Rep;
@@ -33,22 +32,6 @@ public class DepartmentService : IDynamicApiController, ITransient
     [DisplayName("获取部门列表分页")]
     public async Task<SqlSugarPagedList<BD_Department>> Page(PageDepInput input)
     {
-        List<BD_Department> test = await _bd_Depatment_Rep.AsQueryable()
-            .WhereIF(!string.IsNullOrWhiteSpace(input.DepNo), u => u.DepNo.Contains(input.DepNo))
-            .WhereIF(!string.IsNullOrWhiteSpace(input.Remarks), u => u.Remarks.Contains(input.Remarks))
-            .OrderBy(u => u.DepNo).ToListAsync();
-        List<BD_Department> test1 = await _bd_Depatment_Rep.AsQueryable()
-            .WhereIF(!string.IsNullOrWhiteSpace(input.DepNo), u => u.DepNo.Contains(input.DepNo))
-            .OrderBy(u => u.DepNo).ToListAsync();
-        List<BD_Department> test2 = await _bd_Depatment_Rep.AsQueryable()
-            .WhereIF(!string.IsNullOrWhiteSpace(input.Remarks), u => u.Remarks.Contains(input.Remarks))
-            .OrderBy(u => u.DepNo).ToListAsync();
-        List<BD_Department> test3 = await _bd_Depatment_Rep.AsQueryable()
-            .OrderBy(u => u.DepNo).ToListAsync();
-        List<BD_Department> test4 = await _bd_Depatment_Rep.AsQueryable().ToListAsync();
-        SqlSugarPagedList<BD_Department>test5 = await _bd_Depatment_Rep.AsQueryable()
-            .ToPagedListAsync(input.Page, input.PageSize);
-
         return await _bd_Depatment_Rep.AsQueryable()
             .WhereIF(!string.IsNullOrWhiteSpace(input.DepNo), u => u.DepNo.Contains(input.DepNo))
             .WhereIF(!string.IsNullOrWhiteSpace(input.Remarks), u => u.Remarks.Contains(input.Remarks))
@@ -90,7 +73,7 @@ public class DepartmentService : IDynamicApiController, ITransient
         if (isExist) throw Oops.Oh(ErrorCodeEnum.D1003);
 
         await _bd_Depatment_Rep.AsUpdateable(input.Adapt<BD_Department>()).IgnoreColumns(true)
-            .IgnoreColumns(u => new { u.DepNo, u.DepName, u.DepDesc,u.Remarks }).ExecuteCommandAsync();
+            .IgnoreColumns(u => new { u.DepNo, u.DepName, u.DepDesc, u.Remarks }).ExecuteCommandAsync();
 
     }
     #endregion

@@ -19,6 +19,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Admin.NET.Application\Admin.NET.Application.csproj" />
     <ProjectReference Include="..\Admin.NET.Core\Admin.NET.Core.csproj" />
+    <ProjectReference Include="..\Project.BD.Service\Project.BD.Service.csproj" />
   </ItemGroup>
 
 </Project>

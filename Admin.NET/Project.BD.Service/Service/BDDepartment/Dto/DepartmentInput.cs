@@ -4,15 +4,16 @@
 //
 // 电话/微信：18020030720 QQ群1：87333204 QQ群2：252381476
 
-using Admin.NET.Core.Service.BaseDataService.BDepartment.Model;
+using Admin.NET.Core;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Admin.NET.Core.Service.BaseDataService.BDepartment.Dto;
-public class DepartmentInput : BaseIdInput
+namespace Project.BD.Service;
+public class DepartmentInput
 {
     /// <summary>
     /// 状态

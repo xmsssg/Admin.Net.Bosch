@@ -10,7 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Admin.NET.Core.Service.BaseDataService.BDepartment.Model;
+namespace Admin.NET.Core;
 
 /// <summary>
 /// 部门表
