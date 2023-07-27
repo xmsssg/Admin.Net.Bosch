@@ -3,7 +3,7 @@
 /// <summary>
 /// 部门表
 /// </summary>
-[SugarTable(null, "系统审计日志表")]
+[SugarTable(null, "部门表")]
 [SystemTable]
 public class BD_Department : EntityBase
 {

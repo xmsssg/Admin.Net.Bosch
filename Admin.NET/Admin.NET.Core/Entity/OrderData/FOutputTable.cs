@@ -3,15 +3,15 @@ using System.Collections.Generic;
 
 namespace Project.Model.Models;
 
-public partial class BD_ChangeMatrix_Del
+public partial class FOutputTable
 {
     public string Id { get; set; } = null!;
 
-    public int IsChange { get; set; }
+    public string? PartNo { get; set; }
 
-    public decimal? ClearPowder { get; set; }
+    public string? PartName { get; set; }
 
-    public decimal? NoClearPowder { get; set; }
+    public bool? IsPeggingPart { get; set; }
 
     public string? OrgId { get; set; }
 }

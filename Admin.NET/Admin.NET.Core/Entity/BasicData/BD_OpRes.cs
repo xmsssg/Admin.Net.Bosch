@@ -1,9 +1,9 @@
 ﻿namespace Admin.NET.Core;
 
 /// <summary>
-/// 工序设备明细表
+/// 工序设备明细表(Sch)
 /// </summary>
-[SugarTable(null, "工序设备明细表")]
+[SugarTable(null, "工序设备明细表(Sch)")]
 [SystemTable]
 public class BD_OpRes : EntityBase
 {

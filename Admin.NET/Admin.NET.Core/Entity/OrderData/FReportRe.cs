@@ -3,13 +3,11 @@ using System.Collections.Generic;
 
 namespace Project.Model.Models;
 
-public partial class BHolidayRe
+public partial class FReportRe
 {
-    public string HolidayResId { get; set; } = null!;
+    public string ReportResId { get; set; } = null!;
 
-    public string HolidayId { get; set; } = null!;
-
-    public string ResId { get; set; } = null!;
+    public string? ReportDeptId { get; set; }
 
     public string? ResNo { get; set; }
 

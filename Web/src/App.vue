@@ -21,6 +21,7 @@ import { Local, Session } from '/@/utils/storage';
 import mittBus from '/@/utils/mitt';
 import setIntroduction from '/@/utils/setIconfont';
 import checkUpdate from '/@/utils/auto-update';
+import zhCn from './i18n/lang/zh-cn';
 
 // 引入组件
 const LockScreen = defineAsyncComponent(() => import('/@/layout/lockScreen/index.vue'));
