@@ -71,19 +71,19 @@ public class BD_Stock : EntityBase
     /// <summary>
     /// 可用库存
     /// </summary>
-    [SugarColumn(ColumnDescription = "可用库存")]
+    [SugarColumn(ColumnDescription = "可用库存", Length = 18, DecimalDigits = 6)]
     public decimal AvailableStock { get; set; }
 
     /// <summary>
     /// 当前库存
     /// </summary>
-    [SugarColumn(ColumnDescription = "当前库存")]
+    [SugarColumn(ColumnDescription = "当前库存", Length = 18, DecimalDigits = 6)]
     public decimal CurrentStock { get; set; }
 
     /// <summary>
     /// 已弃用ErrorRate
     /// </summary>
-    [SugarColumn(ColumnDescription = "已弃用ErrorRate")]
+    [SugarColumn(ColumnDescription = "已弃用ErrorRate", Length = 18, DecimalDigits = 6)]
     public decimal ErrorRate { get; set; }
 
     /// <summary>
@@ -95,7 +95,7 @@ public class BD_Stock : EntityBase
     /// <summary>
     /// 已弃用ErrorRate
     /// </summary>
-    [SugarColumn(ColumnDescription = "已弃用ErrorRate")]
+    [SugarColumn(ColumnDescription = "已弃用ErrorRate", Length = 18, DecimalDigits = 6)]
     public decimal PromiseDate { get; set; }
 
     /// <summary>
@@ -150,13 +150,13 @@ public class BD_Stock : EntityBase
     /// <summary>
     /// 已弃用Serial
     /// </summary>
-    [SugarColumn(ColumnDescription = "已弃用Serial")]
+    [SugarColumn(ColumnDescription = "已弃用Serial", Length = 18, DecimalDigits = 6)]
     public decimal ATPQty { get; set; }
 
     /// <summary>
     /// 承诺数量
     /// </summary>
-    [SugarColumn(ColumnDescription = "承诺数量")]
+    [SugarColumn(ColumnDescription = "承诺数量", Length = 18, DecimalDigits = 6)]
     public decimal CommittedQty { get; set; }
 
     /// <summary>
@@ -168,19 +168,19 @@ public class BD_Stock : EntityBase
     /// <summary>
     /// 可分配数量
     /// </summary>
-    [SugarColumn(ColumnDescription = "可分配数量")]
+    [SugarColumn(ColumnDescription = "可分配数量", Length = 18, DecimalDigits = 6)]
     public decimal AllocatedQTY { get; set; }
 
     /// <summary>
     /// 可使用量
     /// </summary>
-    [SugarColumn(ColumnDescription = "可使用量")]
+    [SugarColumn(ColumnDescription = "可使用量", Length = 18, DecimalDigits = 6)]
     public decimal AvailableQOH { get; set; }
 
     /// <summary>
     /// 安全数量
     /// </summary>
-    [SugarColumn(ColumnDescription = "安全数量")]
+    [SugarColumn(ColumnDescription = "安全数量", Length = 18, DecimalDigits = 6)]
     public decimal SafetyStock { get; set; }
 
     /// <summary>
@@ -216,7 +216,7 @@ public class BD_Stock : EntityBase
     /// <summary>
     /// 废品量
     /// </summary>
-    [SugarColumn(ColumnDescription = "废品量")]
+    [SugarColumn(ColumnDescription = "废品量", Length = 18, DecimalDigits = 6)]
     public decimal Scrap { get; set; }
 
     /// <summary>

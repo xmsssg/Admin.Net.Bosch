@@ -85,7 +85,7 @@ internal class BD_Part : EntityBase
     /// <summary>
     /// 已弃用DefaultMBDecision
     /// </summary>
-    [SugarColumn(ColumnDescription = "已弃用DefaultMBDecision")]
+    [SugarColumn(ColumnDescription = "已弃用DefaultMBDecision",Length =18,DecimalDigits =6)]
     public decimal DefaultMBDecision { get; set; }
 
     /// <summary>
@@ -98,7 +98,7 @@ internal class BD_Part : EntityBase
     /// <summary>
     /// 已弃用LeadTime
     /// </summary>
-    [SugarColumn(ColumnDescription = "已弃用LeadTime")]
+    [SugarColumn(ColumnDescription = "已弃用LeadTime", Length = 18, DecimalDigits = 6)]
     public decimal FullLeadTime { get; set; }
 
     /// <summary>
@@ -118,7 +118,7 @@ internal class BD_Part : EntityBase
     /// <summary>
     /// 供货类型
     /// </summary>
-    [SugarColumn(ColumnDescription = "供货类型")]
+    [SugarColumn(ColumnDescription = "供货类型", Length = 18, DecimalDigits = 6)]
     public decimal SupplyType { get; set; }
 
     /// <summary>
@@ -130,7 +130,7 @@ internal class BD_Part : EntityBase
     /// <summary>
     /// 准备时间ST
     /// </summary>
-    [SugarColumn(ColumnDescription = "准备时间ST")]
+    [SugarColumn(ColumnDescription = "准备时间ST", Length = 18, DecimalDigits = 6)]
     public decimal SetupTimeST { get; set; }
 
     /// <summary>

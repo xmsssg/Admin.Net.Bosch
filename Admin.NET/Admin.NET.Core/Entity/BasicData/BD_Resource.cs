@@ -99,7 +99,7 @@ public class BD_Resource : EntityBase
     /// <summary>
     /// (Overtime已弃用)
     /// </summary>
-    [SugarColumn(ColumnDescription = "Overtime已弃用")]
+    [SugarColumn(ColumnDescription = "Overtime已弃用", Length = 18, DecimalDigits = 6)]
     public decimal? Overtime { get; set; }
 
     /// <summary>
@@ -112,25 +112,25 @@ public class BD_Resource : EntityBase
     /// <summary>
     /// 加工时间
     /// </summary>
-    [SugarColumn(ColumnDescription = "加工时间")]
+    [SugarColumn(ColumnDescription = "加工时间", Length = 18, DecimalDigits = 6)]
     public decimal? ProcessTime { get; set; }
 
     /// <summary>
     /// 准备时间1
     /// </summary>
-    [SugarColumn(ColumnDescription = "准备时间1")]
+    [SugarColumn(ColumnDescription = "准备时间1", Length = 18, DecimalDigits = 6)]
     public decimal? Setuptime1 { get; set; }
 
     /// <summary>
     /// 准备时间2
     /// </summary>
-    [SugarColumn(ColumnDescription = "准备时间2")]
+    [SugarColumn(ColumnDescription = "准备时间2", Length = 18, DecimalDigits = 6)]
     public decimal? Setuptime2 { get; set; }
 
     /// <summary>
     /// 准备时间3
     /// </summary>
-    [SugarColumn(ColumnDescription = "准备时间3")]
+    [SugarColumn(ColumnDescription = "准备时间3", Length = 18, DecimalDigits = 6)]
     public decimal? Setuptime3 { get; set; }
 
     /// <summary>
