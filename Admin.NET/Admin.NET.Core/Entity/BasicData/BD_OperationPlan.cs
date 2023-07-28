@@ -5,7 +5,7 @@
 /// </summary>
 [SugarTable(null, "产品工序明细表(Plan)")]
 [SystemTable]
-public class BOperationPlan : EntityBase
+public class BD_OperationPlan : EntityBase
 {
     /// <summary>
     /// 工序Id

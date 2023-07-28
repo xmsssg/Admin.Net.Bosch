@@ -90,7 +90,7 @@ public class FD_SoPegging : EntityBase
     /// <summary>
     /// 订单交期
     /// </summary>
-    [SugarColumn(ColumnDescription = "订单交期", Length = 100)]
+    [SugarColumn(ColumnDescription = "订单交期")]
     [MaxLength(100)]
     public virtual DateTime? SodueDate { get; set; }
 

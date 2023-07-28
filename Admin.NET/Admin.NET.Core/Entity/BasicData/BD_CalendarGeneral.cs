@@ -5,7 +5,7 @@
 /// </summary>
 [SugarTable(null, "日历信息详情表")]
 [SystemTable]
-public class BCalendarGeneral : EntityBase
+public class BD_CalendarGeneral : EntityBase
 {
     /// <summary>
     /// Guid

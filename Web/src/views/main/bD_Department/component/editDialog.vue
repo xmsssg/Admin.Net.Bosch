@@ -6,7 +6,7 @@
 					<el-form-item v-show="false">
 						<el-input v-model="ruleForm.id" />
 					</el-form-item>
-					<el-col :xs="24" :sm="12" :md="12" :lg="12" :xl="12" class="mb20">
+					<!-- <el-col :xs="24" :sm="12" :md="12" :lg="12" :xl="12" class="mb20">
 						<el-form-item label="部门Id，唯一标识" prop="depId">
 							<el-input v-model="ruleForm.depId" placeholder="请输入部门Id，唯一标识" clearable />
 							
@@ -19,7 +19,7 @@
 							
 						</el-form-item>
 						
-					</el-col>
+					</el-col> -->
 					<el-col :xs="24" :sm="12" :md="12" :lg="12" :xl="12" class="mb20">
 						<el-form-item label="部门编号" prop="depNo">
 							<el-input v-model="ruleForm.depNo" placeholder="请输入部门编号" clearable />
@@ -41,24 +41,23 @@
 						</el-form-item>
 						
 					</el-col>
-					<el-col :xs="24" :sm="12" :md="12" :lg="12" :xl="12" class="mb20">
+					<!-- <el-col :xs="24" :sm="12" :md="12" :lg="12" :xl="12" class="mb20">
 						<el-form-item label="部门状态，默认为1" prop="status">
 							<el-input-number v-model="ruleForm.status" placeholder="请输入部门状态，默认为1" clearable />
 							
 						</el-form-item>
 						
-					</el-col>
+					</el-col> -->
 					<el-col :xs="24" :sm="12" :md="12" :lg="12" :xl="12" class="mb20">
-						<el-form-item label="部门备注，现用于部门类型" prop="remarks">
-							<el-input v-model="ruleForm.remarks" placeholder="请输入部门备注，现用于部门类型" clearable />
-							
-						</el-form-item>
-						
-					</el-col>
-					<el-col :xs="24" :sm="12" :md="12" :lg="12" :xl="12" class="mb20">
-						<el-form-item label="组织OrgId" prop="orgID">
-							<el-input v-model="ruleForm.orgID" placeholder="请输入组织OrgId" clearable />
-							
+						<el-form-item label="部门类型" prop="remarks">
+						<el-select v-model="ruleForm.remarks" class="m-2" placeholder="" size="small">
+							<el-option
+								v-for="item in deptTypeoptions"
+								:key="item.value"
+								:label="item.label"
+								:value="item.value"
+								/>
+							</el-select>
 						</el-form-item>
 						
 					</el-col>
@@ -78,7 +77,8 @@
 	import { ref,onMounted } from "vue";
 	import { ElMessage } from "element-plus";
 	import type { FormRules } from "element-plus";
-	import { addBD_Department, updateBD_Department } from "/@/api/main/bD_Department";
+	import { getAPI } from '/@/utils/axios-utils';
+	import { BDDepartmentApi } from '/@/api-services/api';
 	//父级传递来的参数
 	var props = defineProps({
 	title: {
@@ -93,15 +93,10 @@
 	const ruleForm = ref<any>({});
 		//自行删除非必填规则
 		const rules = ref<FormRules>({
-  id: [{required: true, message: '请输入Id！', trigger: 'blur',},],
-  depId: [{required: true, message: '请输入部门Id，唯一标识！', trigger: 'blur',},],
-  workshopId: [{required: true, message: '请输入部门WorkshopId！', trigger: 'blur',},],
   depNo: [{required: true, message: '请输入部门编号！', trigger: 'blur',},],
   depName: [{required: true, message: '请输入部门名称！', trigger: 'blur',},],
   depDesc: [{required: true, message: '请输入部门描述！', trigger: 'blur',},],
-  status: [{required: true, message: '请输入部门状态，默认为1！', trigger: 'blur',},],
-  remarks: [{required: true, message: '请输入部门备注，现用于部门类型！', trigger: 'blur',},],
-  orgID: [{required: true, message: '请输入组织OrgId！', trigger: 'blur',},],
+  remarks: [{required: true, message: '请选择部门类型！', trigger: 'blur',},],
 });
 
 // 打开弹窗
@@ -127,9 +122,9 @@ const submit = async () => {
     if (isValid) {
       let values = ruleForm.value;
       if (ruleForm.value.id != undefined && ruleForm.value.id > 0) {
-        await updateBD_Department(values);
+        await getAPI(BDDepartmentApi).apiBDDepartmentUpdatePost(values);
       } else {
-        await addBD_Department(values);
+        await getAPI(BDDepartmentApi).apiBDDepartmentAddPost(values);
       }
       closeDialog();
     } else {
@@ -151,6 +146,16 @@ onMounted(async () => {
 
 //将属性或者函数暴露给父组件
 defineExpose({ openDialog });
+const deptTypeoptions = [
+  {
+    value: '1',
+    label: '制造',
+  },
+  {
+    value: '0',
+    label: '非制造',
+  }
+]
 </script>
 
 

@@ -22,6 +22,13 @@ public class BD_Resource : EntityBase
     public string DepID { get; set; }
 
     /// <summary>
+    /// 资源设备编码
+    /// </summary>
+    [SugarColumn(ColumnDescription = "资源设备编码", Length = 100)]
+    [MaxLength(100)]
+    public string ResNo { get; set; }
+
+    /// <summary>
     /// 资源设备名称
     /// </summary>
     [SugarColumn(ColumnDescription = "资源设备名称", Length = 100)]

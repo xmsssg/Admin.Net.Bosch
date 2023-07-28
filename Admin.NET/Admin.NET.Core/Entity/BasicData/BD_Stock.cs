@@ -242,6 +242,6 @@ public class BD_Stock : EntityBase
     /// <summary>
     /// GP最小批量
     /// </summary>
-    [SugarColumn(ColumnDescription = "GP最小批量", Length = 100)]
+    [SugarColumn(ColumnDescription = "GP最小批量")]
     public int GPLotSize { get; set; }
 }

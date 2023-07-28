@@ -45,64 +45,55 @@ public class BD_OpRes : EntityBase
     /// <summary>
     /// 准备时间(PT)
     /// </summary>
-    [SugarColumn(ColumnDescription = "准备时间(PT)", Length = 100)]
-    [MaxLength(100)]
+    [SugarColumn(ColumnDescription = "准备时间(PT)", Length = 18,DecimalDigits =6)]
     public decimal? Setuptime { get; set; }
 
     /// <summary>
     /// 速率
     /// </summary>
-    [SugarColumn(ColumnDescription = "速率", Length = 100)]
-    [MaxLength(100)]
+    [SugarColumn(ColumnDescription = "速率", Length = 18, DecimalDigits = 6)]
     public decimal? Rate { get; set; }
 
     /// <summary>
     /// 加工时间(MT)
     /// </summary>
-    [SugarColumn(ColumnDescription = "加工时间(MT)", Length = 100)]
-    [MaxLength(100)]
+    [SugarColumn(ColumnDescription = "加工时间(MT)", Length = 18, DecimalDigits = 6)]
     public decimal? ProcessTime { get; set; }
 
     /// <summary>
     /// 优先级
     /// </summary>
-    [SugarColumn(ColumnDescription = "优先级", Length = 100)]
-    [MaxLength(100)]
+    [SugarColumn(ColumnDescription = "优先级", Length = 18, DecimalDigits = 6)]
     public decimal? Priority { get; set; }
 
     /// <summary>
     /// 是否可用
     /// </summary>
-    [SugarColumn(ColumnDescription = "是否可用", Length = 100)]
-    [MaxLength(100)]
+    [SugarColumn(ColumnDescription = "是否可用")]
     public int? Enabled { get; set; }
 
     /// <summary>
     /// Uom
     /// </summary>
-    [SugarColumn(ColumnDescription = "Uom", Length = 100)]
-    [MaxLength(100)]
+    [SugarColumn(ColumnDescription = "Uom")]
     public int? Uom { get; set; }
 
     /// <summary>
     /// 准备数量
     /// </summary>
-    [SugarColumn(ColumnDescription = "准备数量", Length = 100)]
-    [MaxLength(100)]
-    public double? SetupQuantity { get; set; }
+    [SugarColumn(ColumnDescription = "准备数量", Length = 18, DecimalDigits = 6)]
+    public decimal? SetupQuantity { get; set; }
 
     /// <summary>
     /// 排队时间
     /// </summary>
-    [SugarColumn(ColumnDescription = "排队时间", Length = 100)]
-    [MaxLength(100)]
+    [SugarColumn(ColumnDescription = "排队时间", Length = 18, DecimalDigits = 6)]
     public decimal? Queuetime { get; set; }
 
     /// <summary>
     /// 所需人工数量
     /// </summary>
-    [SugarColumn(ColumnDescription = "所需人工数量", Length = 100)]
-    [MaxLength(100)]
+    [SugarColumn(ColumnDescription = "所需人工数量")]
     public int? RequiredLaborQty { get; set; }
 
     /// <summary>
@@ -115,8 +106,7 @@ public class BD_OpRes : EntityBase
     /// <summary>
     /// 分配单位
     /// </summary>
-    [SugarColumn(ColumnDescription = "分配单位", Length = 100)]
-    [MaxLength(100)]
+    [SugarColumn(ColumnDescription = "分配单位", Length = 18, DecimalDigits = 6)]
     public decimal? AssignedUnits { get; set; }
 
     /// <summary>
@@ -129,22 +119,19 @@ public class BD_OpRes : EntityBase
     /// <summary>
     /// 最大产能
     /// </summary>
-    [SugarColumn(ColumnDescription = "最大产能", Length = 100)]
-    [MaxLength(100)]
+    [SugarColumn(ColumnDescription = "最大产能", Length = 18, DecimalDigits = 6)]
     public decimal? ResMaxCapacity { get; set; }
 
     /// <summary>
     /// 准备时间（ST）
     /// </summary>
-    [SugarColumn(ColumnDescription = "准备时间（ST）", Length = 100)]
-    [MaxLength(100)]
+    [SugarColumn(ColumnDescription = "准备时间（ST）", Length = 18, DecimalDigits = 6)]
     public decimal? Setuptime2 { get; set; }
 
     /// <summary>
     /// 工序Id
     /// </summary>
-    [SugarColumn(ColumnDescription = "工序Id", Length = 100)]
-    [MaxLength(100)]
+    [SugarColumn(ColumnDescription = "工序Id", Length = 18, DecimalDigits = 6)]
     public decimal? Setuptime3 { get; set; }
 
     /// <summary>
