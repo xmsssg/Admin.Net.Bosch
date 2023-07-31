@@ -18,10 +18,13 @@
               <el-form-item label="设备是否可用">
               <el-input-number v-model="queryParams.isAvailable"  clearable placeholder="请输入设备是否可用"/>
               </el-form-item>
-          <el-button type="primary" icon="ele-Plus" @click="openAddBD_Resource" v-auth="'bD_Resource:add'"> 新增 </el-button>
-          <el-button icon="ele-Refresh" @click="() => queryParams = {}"> 重置 </el-button>
-          <el-button type="primary" plain icon="ele-Search" @click="handleQuery" v-auth="'bD_Resource:page'"> 查询 </el-button>
-          
+          <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24" class="mb20 search-actions">
+          <div>
+            <el-button type="primary" icon="ele-Plus" @click="openAddBD_Resource" v-auth="'bD_Resource:add'"> 新增 </el-button>
+            <el-button icon="ele-Refresh" @click="() => queryParams = {}"> 重置 </el-button>
+            <el-button type="primary" plain icon="ele-Search" @click="handleQuery" v-auth="'bD_Resource:page'"> 查询 </el-button>
+          </div>
+          </el-col>
       </el-row>
       </el-form>
 		</el-card>
@@ -38,10 +41,22 @@
 				 <el-table-column prop="resNo" label="设备编码" fixed="" show-overflow-tooltip="" />
 				 <el-table-column prop="resName" label="设备名称" fixed="" show-overflow-tooltip="" />
 				 <el-table-column prop="resDesc" label="设备描述" fixed="" show-overflow-tooltip="" />
-				 <el-table-column prop="type" label="设备类型" fixed="" show-overflow-tooltip="" />
-				 <el-table-column prop="resType" label="设备产能类型" fixed="" show-overflow-tooltip="" />
+         <el-table-column label="设备类型" fixed="" show-overflow-tooltip="">
+					<template #default="scope">
+						{{scope.row.type=='1'?'内部':scope.row.type=='2'?'外部':'外协' }}
+					</template>
+				</el-table-column>	
+         <el-table-column label="设备产能类型" fixed="" show-overflow-tooltip="">
+					<template #default="scope">
+						{{scope.row.resType=='-1'?'无限产能':scope.row.resType=='0'?'单产能':'多产能' }}
+					</template>
+				</el-table-column>	
 				 <el-table-column prop="units" label="设备数量" fixed="" show-overflow-tooltip="" />
-				 <el-table-column prop="isAvailable" label="设备是否可用" fixed="" show-overflow-tooltip="" />
+         <el-table-column label="设备是否可用" fixed="" show-overflow-tooltip="">
+					<template #default="scope">
+						{{scope.row.isAvailable=='1'?'Y':'N' }}
+					</template>
+				</el-table-column>	
 				<el-table-column label="操作" width="140" align="center" fixed="right" show-overflow-tooltip="" v-if="auth('bD_Resource:edit') || auth('bD_Resource:delete')">
 					<template #default="scope">
 						<el-button icon="ele-Edit" size="small" text="" type="primary" @click="openEditBD_Resource(scope.row)" v-auth="'bD_Resource:edit'"> 编辑 </el-button>
