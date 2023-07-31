@@ -55,6 +55,39 @@ public class SysDictDataSeedData : ISqlSugarEntitySeedData<SysDictData>
             new SysDictData{ Id=1300000000503, DictTypeId=1300000000105, Value="EntityTenantId【租户实体Id】", Code="EntityTenantId", OrderNo=1, Remark="【租户实体Id】", Status=StatusEnum.Disable, CreateTime=DateTime.Parse("2022-02-10 00:00:00") },
             new SysDictData{ Id=1300000000504, DictTypeId=1300000000105, Value="EntityTenant【租户实体】", Code="EntityTenant", OrderNo=1, Remark="【租户实体】", Status=StatusEnum.Disable, CreateTime=DateTime.Parse("2022-02-10 00:00:00") },
             new SysDictData{ Id=1300000000505, DictTypeId=1300000000105, Value="EntityBaseData【业务实体】", Code="EntityBaseData", OrderNo=1, Remark="【业务实体】", Status=StatusEnum.Disable, CreateTime=DateTime.Parse("2022-02-10 00:00:00") },
+
+            //资源设备类型
+            new SysDictData{ Id=1300000000601, DictTypeId=1300000000106, Value="内部", Code="1", OrderNo=1, Remark="资源设备类型", Status=StatusEnum.Enable, CreateTime=DateTime.Parse("2022-02-10 00:00:00") },
+            new SysDictData{ Id=1300000000602, DictTypeId=1300000000106, Value="外部", Code="2", OrderNo=1, Remark="资源设备类型", Status=StatusEnum.Disable, CreateTime=DateTime.Parse("2022-02-10 00:00:00") },
+            new SysDictData{ Id=1300000000603, DictTypeId=1300000000106, Value="外协", Code="3", OrderNo=1, Remark="资源设备类型", Status=StatusEnum.Disable, CreateTime=DateTime.Parse("2022-02-10 00:00:00") },
+
+            //资源设备产能类型
+            new SysDictData{ Id=1300000000701, DictTypeId=1300000000107, Value="无限产能", Code="-1", OrderNo=1, Remark="资源设备产能类型", Status=StatusEnum.Enable, CreateTime=DateTime.Parse("2022-02-10 00:00:00") },
+            new SysDictData{ Id=1300000000702, DictTypeId=1300000000107, Value="单产能", Code="0", OrderNo=1, Remark="资源设备产能类型", Status=StatusEnum.Enable, CreateTime=DateTime.Parse("2022-02-10 00:00:00") },
+            new SysDictData{ Id=1300000000703, DictTypeId=1300000000107, Value="多产能", Code="1", OrderNo=1, Remark="资源设备产能类型", Status=StatusEnum.Enable, CreateTime=DateTime.Parse("2022-02-10 00:00:00") },
+
+            //部门类型
+            new SysDictData{ Id=1300000000801, DictTypeId=1300000000108, Value="制造", Code="1", OrderNo=1, Remark="部门类型", Status=StatusEnum.Enable, CreateTime=DateTime.Parse("2022-02-10 00:00:00") },
+            new SysDictData{ Id=1300000000802, DictTypeId=1300000000108, Value="非制造", Code="0", OrderNo=1, Remark="部门类型", Status=StatusEnum.Enable, CreateTime=DateTime.Parse("2022-02-10 00:00:00") },    
+
+            //资源设备是否可用
+            new SysDictData{ Id=1300000000901, DictTypeId=1300000000109, Value="Y", Code="1", OrderNo=1, Remark="资源设备可用", Status=StatusEnum.Enable, CreateTime=DateTime.Parse("2022-02-10 00:00:00") },
+            new SysDictData{ Id=1300000000902, DictTypeId=1300000000109, Value="N", Code="0", OrderNo=1, Remark="资源设备不可用", Status=StatusEnum.Enable, CreateTime=DateTime.Parse("2022-02-10 00:00:00") },
+
+            //产品是否去毛刺
+            new SysDictData{ Id=1300000011001, DictTypeId=1300000011000, Value="Y", Code="1", OrderNo=1, Remark="产品去毛刺", Status=StatusEnum.Enable, CreateTime=DateTime.Parse("2022-02-10 00:00:00") },
+            new SysDictData{ Id=1300000011002, DictTypeId=1300000011000, Value="N", Code="0", OrderNo=1, Remark="产品不去毛刺", Status=StatusEnum.Enable, CreateTime=DateTime.Parse("2022-02-10 00:00:00") },
+
+            //产品是否去毛刺
+            new SysDictData{ Id=1300000012001, DictTypeId=1300000012000, Value="Y", Code="1", OrderNo=1, Remark="产品有小工序", Status=StatusEnum.Enable, CreateTime=DateTime.Parse("2022-02-10 00:00:00") },
+            new SysDictData{ Id=1300000012002, DictTypeId=1300000012000, Value="N", Code="0", OrderNo=1, Remark="产品没有小工序", Status=StatusEnum.Enable, CreateTime=DateTime.Parse("2022-02-10 00:00:00") },
+
+            //产品粉料特性
+            new SysDictData{ Id=1300000013001, DictTypeId=1300000013000, Value="有铜双料", Code="1", OrderNo=1, Remark="产品属性无铜双料", Status=StatusEnum.Enable, CreateTime=DateTime.Parse("2022-02-10 00:00:00") },
+            new SysDictData{ Id=1300000013002, DictTypeId=1300000013000, Value="无铜双料", Code="2", OrderNo=1, Remark="产品属性无铜双料", Status=StatusEnum.Enable, CreateTime=DateTime.Parse("2022-02-10 00:00:00") },
+            new SysDictData{ Id=1300000013003, DictTypeId=1300000013000, Value="有铜单料", Code="3", OrderNo=1, Remark="产品属性有铜单料", Status=StatusEnum.Enable, CreateTime=DateTime.Parse("2022-02-10 00:00:00") },
+            new SysDictData{ Id=1300000013004, DictTypeId=1300000013000, Value="无铜单料", Code="4", OrderNo=1, Remark="产品属性无铜单料", Status=StatusEnum.Enable, CreateTime=DateTime.Parse("2022-02-10 00:00:00") },
+            new SysDictData{ Id=1300000013005, DictTypeId=1300000013000, Value="无", Code="5", OrderNo=1, Remark="产品属性无粉料特性", Status=StatusEnum.Enable, CreateTime=DateTime.Parse("2022-02-10 00:00:00") },
         };
     }
 }

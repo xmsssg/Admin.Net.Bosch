@@ -48,7 +48,8 @@
 				</el-table-column>	
          <el-table-column label="设备产能类型" fixed="" show-overflow-tooltip="">
 					<template #default="scope">
-						{{scope.row.resType=='-1'?'无限产能':scope.row.resType=='0'?'单产能':'多产能' }}
+						<!-- {{scope.row.resType=='-1'?'无限产能':scope.row.resType=='0'?'单产能':'多产能' }} -->
+            {{ resType[scope.row.resType] }}
 					</template>
 				</el-table-column>	
 				 <el-table-column prop="units" label="设备数量" fixed="" show-overflow-tooltip="" />
@@ -156,6 +157,11 @@ const queryParams = ref<any>
   handleQuery();
   };
 
+  const resType={
+    "-1":'无限产能',
+    0:'单产能',
+    1:'多产能',
+  }
 
 handleQuery();
 </script>
