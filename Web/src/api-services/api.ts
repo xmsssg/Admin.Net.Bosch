@@ -41,4 +41,13 @@ export * from './apis/sys-wechat-api';
 export * from './apis/sys-wechat-pay-api';
 export * from './apis/sys-wechat-user-api';
 export * from './apis/sys-wx-open-api';
-
+export * from './apis/bdbomapi';
+export * from './apis/bdcal-holiday-api';
+export * from './apis/bdcalendar-general-api';
+export * from './apis/bdchange-matrix-api';
+export * from './apis/bddepartment-api';
+export * from './apis/bdmachine-third-api';
+export * from './apis/bdpart-api';
+export * from './apis/bdpart-routing-api';
+export * from './apis/bdresource-api';
+export * from './apis/bdstock-api';
